@@ -4,6 +4,414 @@ sidebar_label: "Release Notes"
 
 # OpCon Release Notes
 
+## OpCon 23.0.1
+
+**NOTE**: Verify/Upgrade these components if applicable: **ServiceNow** Connector – 21.4 or higher, **WebServices** Connector – 21.2 or higher, **Deploy** – 22.4 or higher
+
+2024 March
+
+#### Solution Manager
+
+:white_check_mark: **OPCON-23054**: Fixed an issue when adding jobs to a daily schedule, the schedule and job names in results dialog appeared in lowercase.
+
+:white_check_mark: **OPCON-23207**: Fixed issue where all nodes will have red borders when a schedule is first loaded onto the workflow. This change removes the red border from these nodes and only nodes on position (0, 0) will have red borders.
+
+#### ImpEx2 Web Service
+
+:white_check_mark: **OPCON-23055**: Fixed a problem during schedule deployment removing schedule named instances if the new version of the schedule no longer has any defined schedule named instances.
+
+:white_check_mark: **OPCON-23091**: Fixed an issue during deployment where the global property value was erroneously mixed up when there were other property names with a similar pattern.
+
+## OpCon 23.0.0
+
+**NOTE**: Verify/Upgrade these components if applicable: **ServiceNow** Connector – 21.4 or higher, **WebServices** Connector – 21.2 or higher, **Deploy** – 22.4 or higher
+
+2024 January
+
+#### Installation
+
+:white_check_mark: **OPCON-23030**: Added argument -V10 to SMA Check Identity Limit Job.
+
+:white_check_mark: **OPCON-23031**: Modified SMADB_TLog_Backup script from having WITH NOINIT to having WITH INIT.
+
+#### Server
+
+:eight_spoked_asterisk: **OPCON-22683**: GuidewireCloud: This feature surfaces the Guidewire job logs in OpCon. Users can now review Guidewire related job log content in a single location allowing for faster action and more informed decisions.
+
+:eight_spoked_asterisk: **OPCON-23007**: License expiration emails will no longer be sent to SMA USA and Europe office when the option 'Send Email to SMA Office' is enabled. They will still be sent to recipients defined in 'Send Email CC'.
+
+:white_check_mark: **OPCON-22914**: Fixed an issue where the Start time Calculator continues calculating and never displays the time after upgrade.
+
+#### Solution Manager
+
+:eight_spoked_asterisk: **OPCON-15102**: This milestone introduces Access Management features, empowering administrators with comprehensive control over user and role management within Solution Manager. Administrators now have complete functionality to efficiently handle various aspects of user and role management. This includes creating new users and roles, duplicating an existing user or role, and removing obsolete users or roles. Additionally, administrators can set password expiration, enable external tokens, and enforce password resets as part of streamlined user management. Within role management, administrators can effortlessly oversee general privileges and make updates to activities, batch users, departments, resources, and user permissions.
+
+:eight_spoked_asterisk: **OPCON-15109**: z/OS: This epic delivers the z/OS job type for both master and daily jobs in Solution Manager. Key features include capabilities to create batch, started task, command, REXX, tracked, and queued job actions. In addition, users can tailor their workflows by defining pre-run, failure criteria and job output. Whether you need to create a new z/OS job or modify an existing one, Solution Manager has you covered in its latest feature rollout.
+
+:eight_spoked_asterisk: **OPCON-15110**: BIS: This epic delivers the BIS job type for both master and daily jobs in Solution Manager. The BIS capabilities allow users to create new or modify existing BIS data and file dependency definitions for their BIS jobs.
+
+:eight_spoked_asterisk: **OPCON-19088**: License and Support: This feature delivers Solution Manager users a view of their environment providing details on licensing, version, and contact information.
+
+:eight_spoked_asterisk: **OPCON-22376**: Daily Jobs: This feature delivers an additional view into the configuration of your daily jobs. Users will see an a new configuration category in the right hand panel providing a comprehensive set of details related to the daily job selected.
+
+:eight_spoked_asterisk: **OPCON-22659**: Changed how Studio displays job types for ACS Integrations so that the integration application is displayed. This will clarify job types when viewing schedules in Studio.
+
+:eight_spoked_asterisk: **OPCON-22685**: ACS: This feature delivers advanced failure criteria for jobs built with the ACS SDK. Advanced failure criteria empowers users to set more complex criteria to determine the success or failure of a job. This is a powerful feature that allows users to override basic failure criteria for the primary job to determine the outcome desired.
+
+:eight_spoked_asterisk: **OPCON-22689**: This feature allows users to create Batch Users which are usable by Agents implementing the new ACS architecture.
+
+:white_check_mark: **OPCON-19825**: Fixed an issue in Manage Groups page where setting or removing a filter would clear the selected check boxes.
+
+:white_check_mark: **OPCON-19850**: Fixed an issue in Manage Groups page where changes to a group's name were reset when the Name filter was applied.
+
+:white_check_mark: **OPCON-20719**: Fixed an issue in Master Jobs page where non-admin users were able to see agents they didn't have privileges to.
+
+:white_check_mark: **OPCON-21298**: Fixed an issue where clicking the Back button on certain pages in Vision Settings would result in a "Page Not Found" error.
+
+:white_check_mark: **OPCON-21390**: Fixed an issue where a wrong date was appended to the names of downloaded Solution Manager archive log files.
+
+:white_check_mark: **OPCON-21479**: Fixed an issue in Studio Canvas where clicking a node on the right-hand panel did not highlight the node and bring it into view.
+
+:white_check_mark: **OPCON-22004**: Fixed an issue where the pre-defined Login Security Message was empty during login.
+
+:white_check_mark: **OPCON-22332**: Fixed an issue in Master Schedule Definition page where the Save button was enabled without any changes.
+
+:white_check_mark: **OPCON-22679**: Corrected the display of frequency start times when a job has schedule level frequencies.
+
+:white_check_mark: **OPCON-22781**: Resolved a bug which would occasionally prevent users from restarting schedules that contain Container Jobs.
+
+:white_check_mark: **OPCON-22787**: Fixed an issue where the Agents Machine Groups drawer remains open when multiple Agents are selected and when no Agents are selected. Fixed an issue where filtering Agents based on Status inadvertently selected all Agents in the results.
+
+:white_check_mark: **OPCON-22795**: Removed reference to GoJS on the Studio page.
+
+:white_check_mark: **OPCON-22859**: Corrected the display of frequency start times when a job has schedule level frequencies.
+
+:white_check_mark: **OPCON-22864**: Resolved an issue which disables XML sequence escaping for Agents defined using the new ACS framework. This allows users to successfully utilize comparison operations when configuring jobs with Advanced Failure Criteria.
+
+:white_check_mark: **OPCON-22894**: Fixed error "Failed to save node" in Studio Canvas when a job name in the schedule contains more than 40 characters.
+
+:white_check_mark: **OPCON-23034**: Fixed an issue where the License & Support page showed incorrect OpCon version.
+
+:white_check_mark: **OPCON-23037**: Fixed an issue where the forecast in Frequency Manager Wizard did not take into account Master Holidays Calendar.
+
+:white_check_mark: **OPCON-23038**: Added a message to notify users of nodes on the default coordinate and added a red border around them. Disabled the built-in function to copy nodes with CTRL + Click.
+
+:white_check_mark: **OPCON-23044**: Modified Operations Processes button to open Processes page with the current date selected by default.
+
+:white_check_mark: **OPCON-23062**: List of Schedules in Job Dependency Dialog will now be sorted in alphabetical order.
+
+:white_check_mark: **OPCON-23063**: Automatically highlight the dependency line in Studio Canvas when a job dependency is added.
+
+:white_check_mark: **OPCON-23066**: Fixed an issue in Schedule PERT page where double clicking a Container Job did not show the SubSchedule.
+
+#### REST API
+
+:eight_spoked_asterisk: **OPCON-22750**: Reduced frequency of API calls when configuring new integrations built on the ACS framework. This will provide a smoother and more performant experience for the end user.
+
+:white_check_mark: **OPCON-21835**: Fixed an error in the API which prevented modification of Guidewire Daily Jobs.
+
+:white_check_mark: **OPCON-22044**: Fixed an issue where users with Maintain Embedded Scripts privilege could not see newly added scripts.
+
+#### ImpEx2 Web Service
+
+:white_check_mark: **OPCON-22680**: Fixed a problem where the 'Fails if preferred settings not satisfied' field was not set correctly during schedule deployment when the condition was False.
+
+:white_check_mark: **OPCON-22759**: Fixed a problem where job events went missing after a deployment of existing schedules (update).
+
+:white_check_mark: **OPCON-22760**: Fixed a deployment problem during update of SQL DTEXEC and SQL SCRIPT actions where the SQL user is set when Windows Authentication is selected.
+
+:white_check_mark: **OPCON-22789**: Fixed issues with deployment of schedules that contain SQL jobs where some job definitions would not be updated correctly if schedules to deploy already exist in the target system.
+
+:white_check_mark: **OPCON-22916**: Fixed a problem in ImpEx2 where deployment of a schedule failed due to a global property not being created.
+
+#### Documentation
+
+:white_check_mark: **OPCON-22673**: Fixed broken link in documentation for SQL Agent Configuration page.
+
+:white_check_mark: **OPCON-22798**: Fixed broken and incorrect links in Solution Manager documentation.
+
+## OpCon 22.10.0
+
+**NOTE**: Verify/Upgrade these components if applicable: **ServiceNow** Connector – 21.4 or higher, **WebServices** Connector – 21.2 or higher, **Deploy** – 22.4 or higher
+
+2023 November
+
+#### Server
+
+:white_check_mark: **OPCON-22276**: Removed verbose-level log messages that wrote the raw event text and had the potential to write sensitive data.
+
+#### Solution Manager
+
+:eight_spoked_asterisk: **OPCON-14710**: MCP: This feature delivers the MCP job type for both master and daily jobs in Solution Manager. Key features include Change, Copy, EAE/AB, Remove, Run, and Start job types for MCP. In addition users can tailor their workflows by defining pre-run and failure criteria for all the job types for MCP. Whether you need to create a new MCP job or modify an existing one, Solution Manager has you covered in its latest feature rollout.
+
+:eight_spoked_asterisk: **OPCON-15115**: Reporting: This feature delivers the Audit History report, previously known as Audit Management, providing a view into the history of user updates in the OpCon database. This report has been redesigned to provide greater flexibility with improved filtering capabilities allowing the user to customize how they want to view the content.
+
+:eight_spoked_asterisk: **OPCON-15373**: Reporting: This feature delivers the Schedule and Job History report, previously known as History Management, providing a view into schedule and job history information. This report has been redesigned to provide greater flexibility with improved filtering capabilities allowing the user to customize how they want to view the content.
+
+:eight_spoked_asterisk: **OPCON-20245**: Users, Roles and Permissions: This feature delivers the modification of an existing role capability within Solution Manager. Administrators can now change permissions associated to a role in the general, activities, batch users, departments, resources, and users tabs improving the security and efficiency of your Solution Manager environment.
+
+:eight_spoked_asterisk: **OPCON-20999**: ACS: This feature brings the user an enhanced Agent and Agent Details page tailored to the integration being defined. This feature is designed to streamline your workflow by providing a more intuitive view into the management of your associated integrations.
+
+:eight_spoked_asterisk: **OPCON-21004**: ACS: This feature provides the view to the daily job screen for integrations created using ACS. Users will be able to make updates to daily jobs providing a consistent experience across the platform.
+
+:eight_spoked_asterisk: **OPCON-21277**: Reporting: This feature delivers the exporting capability for the Schedule and Job History report, previously known as History Management. Users can export a customized view of their schedule and job history.
+
+:eight_spoked_asterisk: **OPCON-21306**: ACS: This feature provides the view to the master job screen for integrations created using ACS. Users will be able to create, view, and update their master jobs providing a consistent experience across the platform.
+
+:eight_spoked_asterisk: **OPCON-21462**: Reporting: This feature delivers the exporting capability for the Audit History report, previously known as Audit Management. Users can export a customized view of the history of user updates in the OpCon database.
+
+:eight_spoked_asterisk: **OPCON-21757**: ACS: This feature delivers improved the tracking functionality of ACS integration jobs, ensuring that job tracking persists even in the face of service disruptions. This enhancement provides our users with increased reliability and resilience when managing ACS integration tasks.
+
+#### REST API
+
+:white_check_mark: **OPCON-21830**: Fixed a race condition which would result in occasional failures to save a Master Job configuration. This will provide a more consistent and less frustrating administration experience.
+
+:white_check_mark: **OPCON-22321**: Fixed an API parsing error which prevented restoration of configured values for OpCon MFT. The detail screen now displays the accurate configuration values.
+
+## OpCon 22.9.0
+
+**NOTE**: Verify/Upgrade these components if applicable: **ServiceNow** Connector – 21.4 or higher, **WebServices** Connector – 21.2 or higher, **Deploy** – 22.4 or higher
+
+2023 October
+
+#### Server
+
+:white_check_mark: **OPCON-21993**: Fixed an issue where Guidewire and OpConMFT Jobs would fail to report successful Job Kill execution.
+
+#### Solution Manager
+
+:eight_spoked_asterisk: **OPCON-20685**: Users, Roles and Permissions: This feature delivers the addition of a read-only Users tab within Access Management. Administrators will be able to view a users and user details allowing for better insight into role assignment and permissions.
+
+:white_check_mark: **OPCON-21185**: Fixed an issue where users could not add environment variables to jobs if the value contained '='.
+
+:white_check_mark: **OPCON-21215**: Updated Frequency name to allow special characters. Users will now be able to add and modify Frequency names that contain special characters.
+
+:white_check_mark: **OPCON-21636**: Fixed an issue in Master Schedules page where clicking the Admin button would prompt the user to save the schedule even when there were no changes. This update will bring smoother user experience to the Master Schedules page.
+
+:white_check_mark: **OPCON-21749**: Fixed an issue with reset function in Server Options. 'Reset all to default' and 'Reset current tab to default' will now be enabled when form changes.
+
+:white_check_mark: **OPCON-21824**: Fixed an issue in Master Jobs page where Notification Triggers filter on Group Type did not work.
+
+:white_check_mark: **OPCON-22288**: Added a fix to correct the behavior when an OpCon token expires and the user retries to log in via SSO.
+
+#### REST API
+
+:white_check_mark: **OPCON-21833**: Fixed issue which occurred when re-establishing an authenticated connection with an OpConMFT machine. This operation can now be performed successfully.
+
+:white_check_mark: **OPCON-22292**: Fixed an issue in jobHistories endpoint that caused an error when multiple job status IDs were specified.
+
+## OpCon 22.8.0
+
+**NOTE**: Verify/Upgrade these components if applicable: **ServiceNow** Connector – 21.4 or higher, **WebServices** Connector – 21.2 or higher, **Deploy** – 22.4 or higher
+
+2023 September
+
+#### Installation
+
+:white_check_mark: **OPCON-17338**: Modified SMA Utility SQL scripts to verify existence of script type and runner before inserting new record. This will avoid duplicate values in the database.
+
+#### Server
+
+:eight_spoked_asterisk: **OPCON-19946**: GuidewireCloud: This feature provides communication between OpCon and our new integration with Guidewire Cloud insurance suite. The delivery of this feature will allow GuidewireCloud users the capability to communicate using OpCon for the scheduling of batch processes within Guidewires BillingCenter, ClaimsCenter and PolicyCenter.
+
+:eight_spoked_asterisk: **OPCON-20051**: GuidewireCloud Agent and MFT Agent: This feature delivers the capability to stop a job within a built schedule. This provides the user with more flexibility to make adaptations to their schedules and workflow allowing for jobs not to be run.
+
+:white_check_mark: **OPCON-21521**: Fixed an issue where a missing predecessor job in the daily caused an error in SMAStartTimeCalculator.
+
+#### Solution Manager
+
+:eight_spoked_asterisk: **OPCON-19452**: Reporting: This feature will provide users with a link to the Reporting page from the Library. The initial offering will direct users to a new Reporting landing page providing a convenient way to access your reports. This will streamline your workflow by providing a quick route to where all your future reports will be housed.
+
+:eight_spoked_asterisk: **OPCON-19940**: GuidewireCloud: This feature will deliver GuidewireCloud users the ability to setup and configure an agent in OpCon. Connections to Guidewires BatchCenter, BillingCenter, and PolicyCenter will be available for users to schedule and orchestrate the available batch processes.
+
+:eight_spoked_asterisk: **OPCON-19942**: GuidewireCloud: This feature will provide the ability for Guidewire users to configure a master job to align with an existing schedule. This will allow users to create a robust schedule to orchestrate their batch processes within the Guidewires insurance cores.
+
+:eight_spoked_asterisk: **OPCON-19944**: GuidewireCloud: This feature will provide the ability for Guidewire users to configure a daily job. This will allow users to view and modify their jobs at a more granular (daily) level.
+
+:eight_spoked_asterisk: **OPCON-20683**: Users, Roles and Permissions: This feature delivers the addition of a read-only Resources and Batch Users tab that is aligned to a selected role within Access Management. This will provide administrators with better visibility into existing roles and their assigned batch users and resource components such as access codes, machines, machine groups, schedules and scripts.
+
+:eight_spoked_asterisk: **OPCON-20965**: Server Options: This feature will provide administrators the option to force a global password reset when any changes are made to security settings. This enhancement is designed to bolster the security of your organization by ensuring that any changes to the security configurations can be immediately reflected in your users passwords.
+
+:eight_spoked_asterisk: **OPCON-21505**: GuidewireCloud: This feature delivers integration of the OAUTH requirements to enhance security interactions with the Guidewire REST API. This ensures that only authorized users are able to access and interact with the API resources.
+
+:eight_spoked_asterisk: **OPCON-21590**: GuidewireCloud: This feature will improve the user experience by supplying details and views tailored to GuidewireCloud users. Administrators will be supplied an agent-specific detail page aligned to GuidewireCloud configuration needs. GuidewireCloud users will receive a tailored experience when setting up jobs with insights on attribute details allowing users to find critical information more easily.
+
+:white_check_mark: **OPCON-17189**: Modified Job Status component to show correct job status. This will allow the user to view the correct job status when selecting a job in PERT or in Processes.
+
+:white_check_mark: **OPCON-19792**: Fixed an issue where changing a machine or machine group in an IBMi File Arrival FileWatcher.v3 daily job were not checked for FileWatcher.v3 support.
+
+:white_check_mark: **OPCON-19818**: Fixed incorrect count displayed when modifying an Agent's Communication Status from the Agents page right sidebar.
+
+:white_check_mark: **OPCON-20598**: Renamed a column header in Agent Details page from "Time Spent" to "Time Sent".
+
+:white_check_mark: **OPCON-20654**: Updated the duration column on the Processes page to update every 30 seconds and displays seconds.
+
+:white_check_mark: **OPCON-20721**: Fixed an issue where editing an IBMi File Arrival FileWatcher.v3 daily job did not display or update FileWatcher.v3 properties.
+
+:white_check_mark: **OPCON-20904**: Fixed an issue in IBM i job details page where some fields were not providing pre-defined selections.
+
+:white_check_mark: **OPCON-20910**: Fixed an issue in Event Configuration where the parameters "Reopen Schedule" and "Apply Exceptions" for $JOB:ADD event did not have Yes and No selections.
+
+:white_check_mark: **OPCON-20959**: Fixed advanced filters not being honored after adding a new trigger in Notification Triggers page.
+
+:white_check_mark: **OPCON-20961**: Fixed advanced filters not working correctly in Notification Triggers page.
+
+:white_check_mark: **OPCON-20972**: Fixed an issue where special characters in logs were not displaying properly.
+
+:white_check_mark: **OPCON-21232**: Fixed an issue in Self Service where error would happen after submitting the service request if user input type was Master Job.
+
+:white_check_mark: **OPCON-21195**: Fixed an issue where "Requires XML Escape" for some Agents was always False.
+
+:white_check_mark: **OPCON-21271**: Fixed an issue with different user sessions having stale server options data. Now users no longer need to log out and log in again to get updated server options data while logged into multiple sessions.
+
+:white_check_mark: **OPCON-21565**: Fixed an issue where Multi-Forecasting schedule frequencies resulted in an error.
+
+:white_check_mark: **OPCON-21826**: Removed 'Guidewire' from the Batch Users Target OS selection field. Batch users are no longer supported on this platform.
+
+#### REST API
+
+:white_check_mark: **OPCON-16320**: Vision Card using Remote Session now updates to show the correct card information.
+
+:white_check_mark: **OPCON-21002**: Removed extraneous data from API responses on the 'machines' endpoint.
+
+:white_check_mark: **OPCON-21640**: Fixed slow updates on requests sent to server options endpoint. This update fixed a problem with requests taking an average of 5 seconds to complete to less than 1 second in the server options page.
+
+## OpCon 22.7.0
+
+**NOTE**: Verify/Upgrade these components if applicable: **ServiceNow** Connector – 21.4 or higher, **WebServices** Connector – 21.2 or higher, **Deploy** – 22.4 or higher
+
+2023 August
+
+#### Server
+
+:white_check_mark: **OPCON-16777**: Fixed an issue where estimated start times were not honoring predecessor job run times when Container jobs used instance properties.
+
+:white_check_mark: **OPCON-21275**: Fixed an issue in schedule builds where a named instance schedule having job exceptions defined on it failed if the exception had a property expression with global properties referenced.
+
+#### Solution Manager
+
+:eight_spoked_asterisk: **OPCON-17792**: Server Options: This feature delivers a new time settings tab within server options. This capability gives administrators the ability to customize time settings for schedules and jobs so the workflow can be tailored to your preferences and requirements.
+
+:eight_spoked_asterisk: **OPCON-17798**: Server Options: This feature delivers a new vision tab within Server Options. This capability allows the administrator to define preferences on historical and future data capture on their custom vision cards.
+
+:eight_spoked_asterisk: **OPCON-18523**: Studio Canvas: This new feature will allow users to export a screenshot of a selected schedule's workflow. Now you can capture and save an image of a selected schedule directly from the Studio Canvas.
+
+:eight_spoked_asterisk: **OPCON-20681**: Users, Roles and Permissions: This feature delivers the addition of a read-only Departments tab within Access Management. Administrators will be able to view assigned departments that are aligned to existing roles allowing for better visibility over assigned permissions.
+
+:eight_spoked_asterisk: **OPCON-20986**: Server Options: This feature adds a new layer of precision to server option management. Administrators can now grant write access to users who possess specialized expertise in server options content. Now identified users will not require full administration capabilities to make a valuable contribution.
+
+:eight_spoked_asterisk: **OPCON-21237**: Logging: Added SCHEDULE BUILD LOGS tab to hold schedule build log files. This feature will deliver authorized users the ability to view and download the contents of the logs directly within Solution Manager. This capability is aimed at improving log management efficiency and facilitating easier log analysis.
+
+:eight_spoked_asterisk: **OPCON-21265**: Logging: Included SMALsamDataRetriever.log to base application logs and archives.
+
+:white_check_mark: **OPCON-19806**: Fixed an issue in some pages where right click did not reveal standard browser context menu.
+
+:white_check_mark: **OPCON-19851**: Fixed an issue in Frequencies and Master Jobs where navigating to the next page was not possible.
+
+:white_check_mark: **OPCON-21144**: Fixed an issue in Self Service where comma was reported as invalid character when it was present in characters to strip.
+
+:white_check_mark: **OPCON-21280**: Fixed an issue where Multi-Forecasting frequencies resulted in an error.
+
+:white_check_mark: **OPCON-21333**: Fixed an issue in Self Service where characters to strip were not working as intended.
+
+:white_check_mark: **OPCON-21391**: Fixed an issue where changing the sub-schedule of a Container job was not saved.
+
+:white_check_mark: **OPCON-21472**: Fixed an issue in Server Options page where some empty SMTP settings were saved in the database.
+
+:white_check_mark: **OPCON-21499**: Fixed an issue in Server Options page where numeric SMTP settings were not checked for validity.
+
+:white_check_mark: **OPCON-21503**: Fixed an issue in Server Options where "Save as primary SMTP setting" and "Save as primary SMS setting" checkboxes were not saved.
+
+#### REST API
+
+:white_check_mark: **OPCON-20967**: Fixed an issue which prevented users from using Regular Expression escapes when defining a CloudEvents Trigger filter
+
+:white_check_mark: **OPCON-21272**: Fixed a performance issue in the OpCon API where a container job timed out fetching details if there were a large number of schedules built in daily tables.
+
+:white_check_mark: **OPCON-21282**: Fixed an issue in OpCon API where the 20.0 database migration failed if the database had 2100 user or more defined.
+
+#### ImpEx2 Web Service
+
+:white_check_mark: **OPCON-21194**: Duplicate jobs are created due to case sensitivity. The keys used during existing job matches changed to uppercase to ensure consistent checking avoiding case sensitivity problems. All calls to extract objects from the database have also been updated to ignore case sensitivity.
+
+:white_check_mark: **OPCON-21515**: During schedule deployment when schedule exists, duplicate event records for schedules and jobs can be created. The correction checks for duplicate event records that could be created due to schedule transformation and adjusted the comparison key adding the frequency name to ensure duplicate events are not added to the JEVENTS table.
+
+## OpCon 22.6.0
+
+**NOTE**: Verify/Upgrade these components if applicable: **ServiceNow** Connector – 21.4 or higher, **WebServices** Connector – 21.2 or higher, **Deploy** – 22.4 or higher
+
+2023 July
+
+#### Solution Manager
+
+:eight_spoked_asterisk: **OPCON-17793**: Server Options: This feature delivers the addition of the SMTP server settings configuration tab within Server Options. This new feature will allows administrators to easily setup and manage email notifications, enhancing communication to keep you up to date with system activities.
+
+:eight_spoked_asterisk: **OPCON-17794**: Server Options: This feature delivers a new notification tab within Server Options. This function empowers the administrator to fine tune their preferences for receiving notifications.
+
+:eight_spoked_asterisk: **OPCON-17796**: Server Options: This feature delivers a new security tab within Server Options. This function empowers the administrator to enhance the security of their users accounts with various options to enforce password rules.
+
+:eight_spoked_asterisk: **OPCON-19759**: Studio Canvas: This feature enhancement optimizes the process of storing and retrieving node positions on the canvas, resulting in a smoother and more responsive user experience.
+
+:eight_spoked_asterisk: **OPCON-19801**: Logging: This feature will deliver authorized users the ability to view the contents of the archived log files directly within Solution Manager. This capability is aimed at improving log management efficiency and facilitating easier log analysis.
+
+:eight_spoked_asterisk: **OPCON-19844**: Logging: This feature will deliver authorized users the ability to download the contents of a archived log file directly from Solution Manager. This new capability will improve log management workflows and provide users with more control over their archived logs.
+
+:eight_spoked_asterisk: **OPCON-20241**: Users, Roles and Permissions: This feature delivers the addition of a read-only General tab within Access Management. This new feature provides administrators the capability to view details related to existing roles and the privileges assigned to that role.
+
+:eight_spoked_asterisk: **OPCON-20603**: Logging: Authorized users will have access to a list of archived log files with the ability to see additional details such as the file name, type of file, size and date/time of capture.
+
+:eight_spoked_asterisk: **OPCON-20679**: Users, Roles and Permissions: This feature delivers the addition of a read-only Activities tab within Access Management. Administrators will be able to view the activities and functions assigned to existing roles allowing for better visibility over assigned permissions.
+
+:eight_spoked_asterisk: **OPCON-20804**: Server Options: This feature provides administrators with a convenient way to revert the settings to the default system settings on a single tab or for all changes made on multiple tabs. We believe this addition will enhance usability and flexibility, allowing you to fine tune your setting with ease.
+
+:white_check_mark: **OPCON-20590**: Fixed an issue where copying a job in Studio Canvas would display the message "Job is read only" on the right hand panel.
+
+:white_check_mark: **OPCON-20720**: Fixed an issue in Master Jobs page where not all target schedules were displayed when moving a job from one schedule to another.
+
+:white_check_mark: **OPCON-20722**: Fixed an issue where certain special characters in the new job name were being removed or replaced when copying a master job.
+
+:white_check_mark: **OPCON-20909**: Fixed an issue in the Logs page where sorting log files by size was not working correctly.
+
+#### ImpEx2 Web Service
+
+:white_check_mark: **OPCON-20706**: A null pointer exception occurred during the Simulation process when checking the batch user associated with a File Transfer task definition and the source or destination machine is not defined in the target OpCon system. A message has been included indicating that the batch user could not be checked as the File Transfer machine was not defined.
+
+#### Utilities
+
+:eight_spoked_asterisk: **OPCON-20926**: Added SMA Check Identity Limit job to the SMAUtility schedule when creating a new database.
+
+## OpCon 22.5.0
+
+**NOTE**: Verify/Upgrade these components if applicable: **ServiceNow** Connector – 21.4 or higher, **WebServices** Connector – 21.2 or higher, **Deploy** – 22.4 or higher
+
+2023 June
+
+#### Server
+
+:white_check_mark: **OPCON-16073**: License is now recognized and applied automatically in OpCon on Linux.
+
+#### Solution Manager
+
+:eight_spoked_asterisk: **OPCON-17784**: Users, Roles and Permissions: Users will be provided with a link from the Library providing access to the new Access Management page. This page will be the foundation for the management of users, roles and their permissions within Solution Manager. This first offering provides the user with the initial view into the management of roles.
+
+:eight_spoked_asterisk: **OPCON-17790**: Server Options: This feature will launch a new landing page for Server Options. This initial release will introduce the user to the General Details tab, the first of many, providing the user access to configurations related to your Solution Manager setup.
+
+:eight_spoked_asterisk: **OPCON-19799**: Logging: This feature will deliver authorized users the ability to download the contents of a base log file directly from Solution Manager. With this new capability, you can obtain log file data for in-depth analysis or archival purposes.
+
+:eight_spoked_asterisk: **OPCON-19803**: Logging: This feature will deliver authorized users the ability to view the contents of the base log files directly within Solution Manager. With this new capability, you can gain valuable insights, track system behavior and troubleshoot issues effectively.
+
+:eight_spoked_asterisk: **OPCON-20676**: Users, Roles and Permissions: This release will provide users with an improved and convenient way to manage roles within our application. With the initial view of a list of roles, you can now have a clear overview of existing roles and their descriptions.
+
+:white_check_mark: **OPCON-20725**: [[$EXTERNAL]] properties are now populated in the Job Instance Property Suggestion tooltip.
+
+:white_check_mark: **OPCON-20828**: Fixed error where under some circumstances a user is unable to save a CloudEvents Trigger Association.
+
+:white_check_mark: **OPCON-20865**: Fixed an issue in Notification Triggers Manage Groups page where filtering by selected jobs sometimes gave a job not found error.
+
+:white_check_mark: **OPCON-20873**: Fixed an issue in Notification Triggers Manage Groups page where scrolling through the pages and selecting jobs sometimes gave a job not found error.
+
+:white_check_mark: **OPCON-20971**: Updated Job Type filter on Master Jobs page to include only supported job types.
+
 ## OpCon 22.4.0
 
 2023 May
@@ -22,7 +430,7 @@ sidebar_label: "Release Notes"
 
 :eight_spoked_asterisk: **OPCON-17657**: Solution Manager now supports Single Sign-On with identity providers using the OpenID Connect (OIDC) protocol. Configuration options are provided for Okta and Azure AD, and an 'Other' option for all other implementers of OIDC. Learn more here: [Managing SSO](https://help.smatechnologies.com/opcon/core/Files/UI/Solution-Manager/Library/ServerOptions/Managing-SSO-Configurations).
 
-:eight_spoked_asterisk: **OPCON-19555**: Master schedules, including their jobs and privileges, may now be copied to new schedules within Solution Manager. 
+:eight_spoked_asterisk: **OPCON-19555**: Master schedules, including their jobs and privileges, may now be copied to new schedules within Solution Manager.
 
 :eight_spoked_asterisk: **OPCON-16963**: Added the ability to view, add, modify, delete, copy and move SAP BW master jobs within Solution Manager.
 
@@ -48,7 +456,6 @@ sidebar_label: "Release Notes"
 
 :white_check_mark: **OPCON-15703**: Fixed an issue in SMArt Email where look ahead and look behind tokens were not working.
 
-
 ## OpCon 22.3.1
 
 2023 May
@@ -61,22 +468,21 @@ sidebar_label: "Release Notes"
 
 #### Solution Manager
 
-:eight_spoked_asterisk: **OPCON-18775**: Master Jobs: IMBi users are provided with additional field codes improving the usability of the IBMi Agent.  These field codes allow for more efficient and accurate data entry by providing shortcuts for commonly used values in IBMi systems.
+:eight_spoked_asterisk: **OPCON-18775**: Master Jobs: IMBi users are provided with additional field codes improving the usability of the IBMi Agent. These field codes allow for more efficient and accurate data entry by providing shortcuts for commonly used values in IBMi systems.
 
-:eight_spoked_asterisk: **OPCON-19224**: Studio Canvas: Users are provided with the capability of copying an existing schedule.  In addition, the user will have the option to include or exclude jobs that are associated with schedule chosen to copy.  
+:eight_spoked_asterisk: **OPCON-19224**: Studio Canvas: Users are provided with the capability of copying an existing schedule. In addition, the user will have the option to include or exclude jobs that are associated with schedule chosen to copy.
 
 :white_check_mark: **OPCON-16104**: Fixed "key not found" issue on Deployment Info section of Daily Schedule Definition page.
 
 :white_check_mark: **OPCON-19126**: Fixes issue with slow performance when trying to load tag manager filter results.
 
-:white_check_mark: **OPCON-19224**: Fixed an issue with daily schedule operations where no jobs would appear when trying to add jobs to sub-schedules. 
+:white_check_mark: **OPCON-19224**: Fixed an issue with daily schedule operations where no jobs would appear when trying to add jobs to sub-schedules.
 
 :white_check_mark: **OPCON-19224**: Fixes issue with start time, end time, and job end time not saving correctly from Daily Job maintenance when days were set to '0' for all three fields.
 
 #### ImpEx2 Web Service
 
 :white_check_mark: **OPCON-19570**: Fixed an issue with schedule import where autoBuildTime was missing from the schedule definition if import a schedule with auto build time of 00:00.
-
 
 ## OpCon 22.2.0
 
@@ -92,7 +498,7 @@ sidebar_label: "Release Notes"
 
 #### Solution Manager
 
-:eight_spoked_asterisk: **OPCON-17771**: Master Jobs: Users are provided with the capability of resetting a Master Job type.  Resetting a job type allows the user reset the job type while keeping the characteristics of the job such as dependencies, schedule, frequency etc..
+:eight_spoked_asterisk: **OPCON-17771**: Master Jobs: Users are provided with the capability of resetting a Master Job type. Resetting a job type allows the user reset the job type while keeping the characteristics of the job such as dependencies, schedule, frequency etc..
 
 :eight_spoked_asterisk: **OPCON-17781**: Master Jobs: Users are provided with the ability to view Job Execution History from the Master Jobs page.
 
@@ -100,13 +506,13 @@ sidebar_label: "Release Notes"
 
 :eight_spoked_asterisk: **OPCON-18819**: Adds the ability to active Server functionality on an OpConMFT Agent with a valid license. To enable Server functionality, the Agent must already be authenticated and the webhook must be registered with the Agent.
 
-:eight_spoked_asterisk: **OPCON-19026**: Studio Canvas: Users are provided the option to isolate a jobs dependencies on the canvas.  By right clicking a job node, the user can select to see previous dependencies, subsequent dependencies, see a jobs dependency chain and show a jobs shortest path.
+:eight_spoked_asterisk: **OPCON-19026**: Studio Canvas: Users are provided the option to isolate a jobs dependencies on the canvas. By right clicking a job node, the user can select to see previous dependencies, subsequent dependencies, see a jobs dependency chain and show a jobs shortest path.
 
-:eight_spoked_asterisk: **OPCON-19250**: Studio Canvas: Users are provided the option to isolate the threshold dependencies on the canvas.  By right clicking a threshold dependency, the user can select to see previous dependencies, subsequent dependencies, see a threshold dependency chain and show a thresholds shortest path.
+:eight_spoked_asterisk: **OPCON-19250**: Studio Canvas: Users are provided the option to isolate the threshold dependencies on the canvas. By right clicking a threshold dependency, the user can select to see previous dependencies, subsequent dependencies, see a threshold dependency chain and show a thresholds shortest path.
 
-:eight_spoked_asterisk: **OPCON-19272**: Studio Canvas: Users are provided the option to isolate the resource dependencies on the canvas.  By right clicking a resource dependency, the user can select to see previous dependencies, subsequent dependencies, see resource dependency chain and show a resources shortest path.
+:eight_spoked_asterisk: **OPCON-19272**: Studio Canvas: Users are provided the option to isolate the resource dependencies on the canvas. By right clicking a resource dependency, the user can select to see previous dependencies, subsequent dependencies, see resource dependency chain and show a resources shortest path.
 
-:white_check_mark: **OPCON-18823**: Added performance improvements inside the processes page in Solution Manager to efficiently handle large databases. 
+:white_check_mark: **OPCON-18823**: Added performance improvements inside the processes page in Solution Manager to efficiently handle large databases.
 
 :white_check_mark: **OPCON-18842**: Fixed an issue where Start Time and End Time were not properly displayed for IBMi File Arrival jobs.
 

@@ -4,6 +4,116 @@ sidebar_label: "Release Notes"
 
 # OpCon Release Notes
 
+## OpCon 21.0.25
+
+2024 March
+
+#### Solution Manager
+
+:white_check_mark: **OPCON-23054**: Fixed an issue when adding jobs to a daily schedule, the schedule and job names in results dialog appeared in lowercase.
+
+#### ImpEx2 Web Service
+
+:white_check_mark: **OPCON-22789**: Fixed issues with deployment of schedules that contain SQL jobs where some job definitions would not be updated correctly if schedules to deploy already exist in the target system.
+
+:white_check_mark: **OPCON-23055**: Fixed a problem during schedule deployment removing schedule named instances if the new version of the schedule no longer has any defined schedule named instances.
+
+:white_check_mark: **OPCON-23091**: Fixed an issue during deployment where the global property value was erroneously mixed up when there were other property names with a similar pattern.
+
+## OpCon 21.0.24
+
+2024 January
+
+#### ImpEx2 Web Service
+
+:white_check_mark: **OPCON-22759**: Fixed a problem where job events went missing after a deployment of existing schedules (update).
+
+:white_check_mark: **OPCON-22916**: Fixed a problem in ImpEx2 where deployment of a schedule failed due to a global property not being created.
+
+## OpCon 21.0.23
+
+2023 December
+
+#### ImpEx2 Web Service
+
+:white_check_mark: **OPCON-22680**: Fixed a problem where the field 'Fails if preferred settings not satisfied' is not set correctly during schedule deployment. The field was not set correctly when the condition was False.
+
+:white_check_mark: **OPCON-22760**: Fixed a deployment problem during update of SQL DTEXEC and SQL SCRIPT actions where the SQL user is set when Windows Authentication is selected.
+
+## OpCon 21.0.22
+
+2023 October
+
+#### Server
+
+:white_check_mark: **OPCON-22276**: Removed verbose-level log messages that wrote the raw event text and had the potential to write sensitive data.
+
+:white_check_mark: **OPCON-22394**: Fixed an issue in OpCon services where a new license file dropped in, was not getting picked up and OpCon kept using the old license file. This does not affect the working of the system in any way; only the application of a new license. NOTE: This only applies if you are on an LTS release and on versions 22.0.5 and greater, or 21.0.17 and greater, or 20.0.22 and greater.
+
+## OpCon 21.0.21
+
+2023 October
+
+#### Installation
+
+:white_check_mark: **OPCON-17338**: Modified SMA Utility SQL scripts to verify existence of script type and runner before inserting new record. This will avoid duplicate values in the database.
+
+#### Solution Manager
+
+:white_check_mark: **OPCON-21727**: Fixed Connection Id field for SQL Oracle Daily and Master jobs to allow a null value.
+
+:white_check_mark: **OPCON-21755**: Changed authentication error message to: "We’re having trouble logging you in, please contact your administrator if the problem persists."
+
+## OpCon 21.0.20
+
+2023 September
+
+#### Solution Manager
+
+:white_check_mark: **OPCON-20654**: Updated the Duration column on the Processes page to update every 30 seconds and display seconds.
+
+#### ImpEx2 Web Service
+
+:white_check_mark: **OPCON-21194**: Duplicate jobs are created due to case sensitivity. The keys used during existing job matches changed to uppercase to ensure consistent checking avoiding case sensitivity problems. All calls to extract objects from the database have also been updated to ignore case sensitivity.
+
+:white_check_mark: **OPCON-21515**: During schedule deployment when schedule exists, duplicate event records for schedules and jobs can be created. The correction checks for duplicate event records that could be created due to schedule transformation and adjusted the comparison key adding the frequency name to ensure duplicate events are not added to the JEVENTS table.
+
+## OpCon 21.0.19
+
+2023 August
+
+#### Solution Manager
+
+:white_check_mark: **OPCON-17189**: Modified the Job Status component to show the correct job status. This will allow the user to view the correct job status when selecting a job in PERT or in Processes.
+
+:white_check_mark: **OPCON-21144**: Fixed an issue in Self Service where comma was reported as invalid character when it was present in characters to strip.
+
+:white_check_mark: **OPCON-21333**: Fixed an issue in Self Service where characters to strip were not working as intended.
+
+#### REST API
+
+:white_check_mark: **OPCON-21489**: Fixed a performance issue in the OpCon API where a container job timed out fetching details if there were a large number of schedules built in daily tables.
+
+## OpCon 21.0.18
+
+2023 July
+
+#### Server
+
+:white_check_mark: **OPCON-15037**: Fixed issue of incorrect estimate start time of a daily job that depends on multi-instance jobs.
+
+#### ImpEx2 Web Service
+
+:white_check_mark: **OPCON-20706**: A null pointer exception occurred during the Simulation process when checking the batch user associated with a File Transfer task definition and the source or destination machine is not defined in the target OpCon system. A message has been included indicating that the batch user could not be checked as the File Transfer machine was not defined.
+
+## OpCon 21.0.17
+
+2023 July
+
+#### Server
+
+:white_check_mark: **OPCON-16073**: License is now recognized and applied automatically in OpCon on Linux.
+
 ## OpCon 21.0.16
 
 2023 June
